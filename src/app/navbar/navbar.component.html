@@ -1,0 +1,14 @@
+<nav>
+    <div class="container">
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+        <li><a routerLink="/addpost">Add a post</a></li>
+        <!-- Affichage conditionnel des liens, seulement si on n'est pas connecté -->
+        <li><a routerLink="/register" *ngIf="!currentUser">Register</a></li>
+        <li><a routerLink="/login" *ngIf="!currentUser">Login</a></li>
+        <li><button type="button" *ngIf="currentUser" (click)="logout()">{{ currentUser.login}} Logout</button></li>
+      </ul>
+    </div>
+  </nav>

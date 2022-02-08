@@ -1,0 +1,9 @@
+<article class="card">
+    <img [src]="post.picture" [alt]="post.title" />
+    <div class="card-body">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description }}</p>
+        <a [routerLink]="['/details', post.id]">En savoir plus</a>
+        <p class="likes"> {{ likes }} <i (click)="addLike()" class="far fa-heart"></i></p>
+    </div>
+</article>
